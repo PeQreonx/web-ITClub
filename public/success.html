@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Berhasil - IT Club</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "💻";
+            font-size: 1.8rem;
+        }
+
+        /* Main Content */
+        .main-container {
+            padding-top: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 1rem 2rem;
+        }
+
+        .success-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            color: #28a745;
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        .success-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 1px solid #c3e6cb;
+        }
+
+        .success-message h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .success-message ul {
+            text-align: left;
+            padding-left: 1.5rem;
+        }
+
+        .success-message li {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            color: #0056b3;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 1px solid #b8daff;
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .countdown-box {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border: 1px solid #ffeaa7;
+        }
+
+        .countdown-box strong {
+            color: #dc3545;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links h4 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .success-container {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+
+            .success-title {
+                font-size: 2rem;
+            }
+
+            .success-icon {
+                font-size: 4rem;
+            }
+
+            .social-link {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">IT Club</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="success-container">
+            <div class="success-icon">✅</div>
+            <h1 class="success-title">Pendaftaran Berhasil!</h1>
+            <p class="success-subtitle">Selamat! Data pendaftaran Anda telah berhasil dikirim ke tim IT Club.</p>
+            
+            <div class="success-message">
+                <h3>Langkah Selanjutnya:</h3>
+                <ul>
+                    <li>Tim IT Club akan menghubungi Anda melalui WhatsApp dalam 1-3 hari kerja</li>
+                    <li>Anda akan mendapatkan informasi lebih lanjut tentang kegiatan dan jadwal</li>
+                    <li>Pastikan nomor WhatsApp Anda aktif dan dapat dihubungi</li>
+                    <li>Bergabunglah dengan grup WhatsApp IT Club untuk update terbaru</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Sementara Menunggu:</h4>
+                <p>Anda bisa mengikuti akun media sosial IT Club untuk mendapatkan tips dan tutorial menarik seputar teknologi!</p>
+            </div>
+
+            <div class="social-links">
+                <h4>Ikuti Kami:</h4>
+                <a href="#" class="social-link">📘 Facebook</a>
+                <a href="#" class="social-link">📷 Instagram</a>
+                <a href="#" class="social-link">🐦 Twitter</a>
+            </div>
+
+            <div class="countdown-box">
+                <strong>Penting:</strong> Anda sudah terdaftar dalam sistem. Pendaftaran ulang hanya dapat dilakukan setelah <strong>15 hari</strong> dari hari ini.
+            </div>
+
+            <a href="/" class="back-home">🏠 Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate success icon on load
+            const successIcon = document.querySelector('.success-icon');
+            successIcon.style.opacity = '0';
+            successIcon.style.transform = 'scale(0.5)';
+            
+            setTimeout(() => {
+                successIcon.style.transition = 'all 0.5s ease';
+                successIcon.style.opacity = '1';
+                successIcon.style.transform = 'scale(1)';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

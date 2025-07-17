@@ -1,0 +1,28 @@
+{
+  "name": "it-club-registration",
+  "version": "1.0.0",
+  "description": "Website form pendaftaran ekstrakurikuler IT Club",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "cookie-parser": "^1.4.6",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "registration",
+    "form",
+    "nodemailer"
+  ],
+  "author": "IT Club TEAM",
+  "license": "MIT"
+}
